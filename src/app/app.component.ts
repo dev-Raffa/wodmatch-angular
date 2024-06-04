@@ -35,7 +35,7 @@ export class AppComponent {
   constructor(private service: AppService){}
   
   buttonOnclick(){
-    if(this.firstWord.value && this.firstWord.value.length > 5){
+    if(this.firstWord.value && this.firstWord.value.length === 6){
       try {
         this.combinations = this.service.getCombinations(this.firstWord.value.toLowerCase())
       } catch (error: any) {
