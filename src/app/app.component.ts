@@ -37,7 +37,7 @@ export class AppComponent {
   buttonOnclick(){
     if(this.firstWord.value && this.firstWord.value.length > 5){
       try {
-        this.combinations = this.service.getCombinations(this.firstWord.value)
+        this.combinations = this.service.getCombinations(this.firstWord.value.toLowerCase())
       } catch (error: any) {
         if(error.message = 'Word not found in dictionary'){
           this.firstWord.setErrors({
