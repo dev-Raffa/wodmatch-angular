@@ -8,7 +8,6 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
 import { WordsCombination } from './common/interfaces/words- combination/words-combination.interface';
 import { NgFor, NgIf } from '@angular/common';
-import { words } from './common/const/words.const';
 
 @Component({
   selector: 'app-root',
@@ -38,7 +37,7 @@ export class AppComponent {
   buttonOnclick(){
     if(this.firstWord.value && this.firstWord.value.length > 5){
       try {
-        this.service.getCombinations(this.firstWord.value)
+        this.combinations = this.service.getCombinations(this.firstWord.value)
       } catch (error: any) {
         if(error.message = 'Word not found in dictionary'){
           this.firstWord.setErrors({
