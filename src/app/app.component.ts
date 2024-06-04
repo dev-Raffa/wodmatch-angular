@@ -8,6 +8,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
 import { WordsCombination } from './common/interfaces/words- combination/words-combination.interface';
 import { NgFor, NgIf } from '@angular/common';
+import { words } from './common/const/words.const';
 
 @Component({
   selector: 'app-root',
@@ -30,6 +31,7 @@ import { NgFor, NgIf } from '@angular/common';
 export class AppComponent {
   firstWord = new FormControl('', [Validators.minLength(6), Validators.maxLength(6)])
   combinations: WordsCombination[] = []
+ 
 
   constructor(private service: AppService){}
   
